@@ -7,6 +7,8 @@ import android.os.Bundle;
  * Created by group 8 on 2016-05-17.
  */
 
+// tests
+
 public class VideoThing extends Activity {
 /**    private static VideoThing ourInstance = new VideoThing();
 
