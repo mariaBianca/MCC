@@ -1,14 +1,20 @@
 package com.mccapp.bianca.mcc;
+/**
+ * @author by Group Ella.
+ */
+/**
+ * This class represents the implementation of the Button-controlled view.
+ * */
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,130 +28,46 @@ import java.util.UUID;
 public class ButtonView extends AppCompatActivity {
 
     TextView myLabel;
-    BluetoothAdapter mBluetoothAdapter;
-    BluetoothSocket mmSocket;
-    BluetoothDevice mmDevice;
-    OutputStream mmOutputStream;
-    InputStream mmInputStream;
-    Thread workerThread;
-    byte[] readBuffer;
-    int readBufferPosition;
-    volatile boolean stopWorker;
-   // MediaPlayer honk = MediaPlayer.create(getApplicationContext(), R.raw.startaudio );
+    static BluetoothAdapter mBluetoothAdapter;
+    static BluetoothSocket mmSocket;
+    static BluetoothDevice mmDevice;
+    static OutputStream mmOutputStream;
+    static InputStream mmInputStream;
+    static Thread workerThread;
+    static byte[] readBuffer;
+    static int readBufferPosition;
+    volatile static boolean stopWorker;
+    MediaPlayer honk = MediaPlayer.create(getApplicationContext(), R.raw.startaudio );
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //honk.start();
+        honk.start();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //honk.stop();
+        honk.stop();
 
         //button declaration
-        Button upButton = (Button) this.findViewById(R.id.up);
-        Button leftButton = (Button) this.findViewById(R.id.left);
         Button bluetoothButton = (Button) this.findViewById(R.id.bluetoothBtn);
-        Button rightButton = (Button) this.findViewById(R.id.right);
+        Button upButton = (Button) this.findViewById(R.id.up);
         Button downButton = (Button) this.findViewById(R.id.down);
+        Button leftButton = (Button) this.findViewById(R.id.left);
+        Button rightButton = (Button) this.findViewById(R.id.right);
         Button stopButton = (Button) this.findViewById(R.id.stop);
 
-        // Button upButton = (Button) this.findViewById(R.id.up);
-        bluetoothButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    findBT();
-                    openBT();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
 
-        upButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Forward();
-            }
-        });
-
-        downButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Backward();
-            }
-        });
-
-        leftButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Left();
-            }
-        });
-
-        rightButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Right();
-            }
-        });
-
-        stopButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Stop();
-            }
-        });
-
-
-    }
-// Commands to move the car.
-    void Forward()
-    {
-        try {
-            mmOutputStream.write("f".getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //assign keyListeners to the buttons.
+        Listeners.BluetoothListener(bluetoothButton);
+        Listeners.UpListener(upButton);
+        Listeners.DownListener(downButton);
+        Listeners.LeftListener(leftButton);
+        Listeners.RightListener(rightButton);
+        Listeners.StopListener(stopButton);
     }
 
-    void Backward()
-    {
-        try {
-            mmOutputStream.write("b".getBytes());
-        }  catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    void Right(){
-        try{
-            mmOutputStream.write("r".getBytes());
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-    void Left(){
-        try{
-            mmOutputStream.write("l".getBytes());
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
-    void Stop(){
-        try{
-            mmOutputStream.write("s".getBytes());
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-    void findBT()
+    static void findBT()
     {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if(mBluetoothAdapter == null)
@@ -156,7 +78,7 @@ public class ButtonView extends AppCompatActivity {
         if(!mBluetoothAdapter.isEnabled())
         {
             Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBluetooth, 0);
+            //startActivityForResult(enableBluetooth, 0);
         }
 
         Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
@@ -174,7 +96,7 @@ public class ButtonView extends AppCompatActivity {
         // myLabel.setText("Bluetooth Device Found");
     }
 
-    void openBT() throws IOException
+    static void openBT() throws IOException
     {
         UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb"); //Standard SerialPortService ID
         mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
@@ -183,10 +105,10 @@ public class ButtonView extends AppCompatActivity {
         mmInputStream = mmSocket.getInputStream();
 
         beginListenForData();
-        Toast.makeText(getApplicationContext(),"Bluetooth connected!" ,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),"Bluetooth connected!" ,Toast.LENGTH_LONG).show();;  UNCOMMENT HERE
     }
 
-    void beginListenForData()
+    static void beginListenForData()
     {
         final Handler handler = new Handler();
         final byte delimiter = 10; //This is the ASCII code for a newline character
