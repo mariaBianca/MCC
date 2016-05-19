@@ -34,7 +34,7 @@ public class BluetoothConnection {
     static TextView bluetoothLabel;
 
 
-    static void findBT()
+    public static void findBT()
     {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if(mBluetoothAdapter == null)
@@ -63,7 +63,7 @@ public class BluetoothConnection {
         bluetoothLabel.setText("Bluetooth Device Found");
     }
 
-    static void openBT() throws IOException
+    public static void openBT() throws IOException
     {
         UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb"); //Standard SerialPortService ID
         mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
@@ -75,7 +75,7 @@ public class BluetoothConnection {
         bluetoothLabel.setText("Bluetooth opened");
     }
 
-    static void beginListenForData()
+    public static void beginListenForData()
     {
         final Handler handler = new Handler();
         final byte delimiter = 10; //This is the ASCII code for a newline character
@@ -133,7 +133,7 @@ public class BluetoothConnection {
     }
 
 
-    void closeBT() throws IOException
+    public void closeBT() throws IOException
     {
         stopWorker = true;
         mmOutputStream.close();

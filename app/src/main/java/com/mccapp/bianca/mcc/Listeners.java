@@ -17,6 +17,9 @@ public class Listeners {
     /**
      * Method to set the keyListener for the bluetoothButton
      * */
+
+    BluetoothConnection bc;
+
     public static void BluetoothListener(Button button){
 
         button.setOnClickListener(new View.OnClickListener() {

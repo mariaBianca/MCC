@@ -6,7 +6,6 @@ package com.mccapp.bianca.mcc;
  * This class represents the implementation of the Button-controlled view.
  * */
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Button;
@@ -14,19 +13,14 @@ import android.widget.Button;
 public class ButtonView extends AppCompatActivity {
 
     BluetoothConnection bluetoothConnection = new BluetoothConnection();
-    //MediaPlayer honk = MediaPlayer.create(getApplicationContext(), R.raw.startaudio );
 
+     void Button() {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        //honk.start();
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //honk.stop();
 
-        //button declaration
+         //button declaration
         Button bluetoothButton = (Button) this.findViewById(R.id.bluetoothBtn);
         Button upButton = (Button) this.findViewById(R.id.up);
         Button downButton = (Button) this.findViewById(R.id.down);

@@ -9,8 +9,6 @@ package com.mccapp.bianca.mcc;
 import android.app.Activity;
 import android.os.Bundle;
 
-
-
 public class VideoThing extends Activity {
     private static VideoThing ourInstance = new VideoThing();
 
