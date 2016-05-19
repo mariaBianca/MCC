@@ -10,7 +10,7 @@ public class Direction {
     static void Forward()
     {
         try {
-            ButtonView.mmOutputStream.write("f".getBytes());
+            BluetoothConnection.mmOutputStream.write("f".getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -19,7 +19,7 @@ public class Direction {
     static void Backward()
     {
         try {
-            ButtonView.mmOutputStream.write("b".getBytes());
+            BluetoothConnection.mmOutputStream.write("b".getBytes());
         }  catch (IOException e) {
             e.printStackTrace();
         }
@@ -27,7 +27,7 @@ public class Direction {
 
     static void Right(){
         try{
-            ButtonView.mmOutputStream.write("r".getBytes());
+            BluetoothConnection.mmOutputStream.write("r".getBytes());
         }
         catch (IOException e){
             e.printStackTrace();
@@ -35,7 +35,7 @@ public class Direction {
     }
     static void Left(){
         try{
-            ButtonView.mmOutputStream.write("l".getBytes());
+            BluetoothConnection.mmOutputStream.write("l".getBytes());
         }
         catch (IOException e){
             e.printStackTrace();
@@ -44,7 +44,7 @@ public class Direction {
 
     static void Stop(){
         try{
-            ButtonView.mmOutputStream.write("s".getBytes());
+            BluetoothConnection.mmOutputStream.write("s".getBytes());
         }
         catch (IOException e){
             e.printStackTrace();
