@@ -1,7 +1,11 @@
 package com.mccapp.bianca.mcc;
 
 /**
- * Created by Bianca on 09/05/2016.
+ * Created by Ella.
  */
+/**
+ * This class represents the implementation of the HomeScreen view.
+ * */
+
 public class HomeScreen {
 }

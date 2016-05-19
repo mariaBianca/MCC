@@ -1,8 +1,12 @@
 package com.mccapp.bianca.mcc;
 
 /**
- * Created by Group 8 on 09/05/2016.
+ * Created by Group Ella on 09/05/2016.
  */
+/**
+ * This class represents the implementation of the Joystick controller view.
+ * */
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;

@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by group 8 on 2016-05-17.
+ * Created by group Ella on 2016-05-17.
  */
+/**
+ * This class represents the implementation of the Video view.
+ * */
 
 // tests
 
