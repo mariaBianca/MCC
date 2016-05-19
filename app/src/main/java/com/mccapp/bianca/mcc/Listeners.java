@@ -24,8 +24,8 @@ public class Listeners {
             @Override
             public void onClick(View v) {
                 try {
-                    ButtonView.findBT();
-                    ButtonView.openBT();
+                    BluetoothConnection.findBT();
+                    BluetoothConnection.openBT();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
