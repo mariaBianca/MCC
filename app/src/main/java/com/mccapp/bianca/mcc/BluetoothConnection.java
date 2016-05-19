@@ -2,7 +2,7 @@ package com.mccapp.bianca.mcc;
 
 /**
  * Created by Group Ella.
-        */
+ * */
 /**
  * This class represents the implementation the bluetooth connection.
  * */
