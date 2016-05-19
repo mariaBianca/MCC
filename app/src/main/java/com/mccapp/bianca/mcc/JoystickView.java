@@ -1,7 +1,7 @@
 package com.mccapp.bianca.mcc;
 
 /**
- * Created by Group Ella on 09/05/2016.
+ * @author Group Ella.
  */
 /**
  * This class represents the implementation of the Joystick controller view.

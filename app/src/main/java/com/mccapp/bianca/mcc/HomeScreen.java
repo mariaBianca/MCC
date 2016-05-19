@@ -1,7 +1,7 @@
 package com.mccapp.bianca.mcc;
 
 /**
- * Created by Ella.
+ *  @author Group Ella.
  */
 /**
  * This class represents the implementation of the HomeScreen view.

@@ -1,19 +1,18 @@
 package com.mccapp.bianca.mcc;
 
-import android.app.Activity;
-import android.os.Bundle;
-
 /**
- * Created by group Ella on 2016-05-17.
+ * @author group Ella.
  */
 /**
  * This class represents the implementation of the Video view.
  * */
+import android.app.Activity;
+import android.os.Bundle;
 
-// Video class test
+
 
 public class VideoThing extends Activity {
-/**    private static VideoThing ourInstance = new VideoThing();
+    private static VideoThing ourInstance = new VideoThing();
 
     public static VideoThing getInstance() {
         return ourInstance;
@@ -21,7 +20,7 @@ public class VideoThing extends Activity {
 
     private VideoThing() {
     }
-*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

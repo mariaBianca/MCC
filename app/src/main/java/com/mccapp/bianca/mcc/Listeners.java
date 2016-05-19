@@ -3,15 +3,14 @@ package com.mccapp.bianca.mcc;
 /**
  * @author Group Ella.
  * */
+/**
+ * This class represents the implementation of the Key Listeners for all the buttons used throughout the app.
+ * */
 
 import android.view.View;
 import android.widget.Button;
 
 import java.io.IOException;
-
-/**
- * This class represents the implementation of the Key Listeners for all the buttons used throughout the app.
- * */
 
 public class Listeners {
 

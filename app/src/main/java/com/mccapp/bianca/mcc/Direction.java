@@ -5,6 +5,9 @@ import java.io.IOException;
 /**
  * @author Group Ella
  */
+/**
+ * This class represents the implementation of the Directions.
+ * */
 public class Direction {
 
     static void Forward()
