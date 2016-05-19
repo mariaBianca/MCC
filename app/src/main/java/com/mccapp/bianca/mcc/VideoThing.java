@@ -10,7 +10,7 @@ import android.os.Bundle;
  * This class represents the implementation of the Video view.
  * */
 
-// tests
+// Video class test
 
 public class VideoThing extends Activity {
 /**    private static VideoThing ourInstance = new VideoThing();
