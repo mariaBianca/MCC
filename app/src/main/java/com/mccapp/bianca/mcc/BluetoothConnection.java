@@ -14,6 +14,7 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Handler;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -145,7 +146,7 @@ public class BluetoothConnection {
         mmOutputStream.close();
         mmInputStream.close();
         mmSocket.close();
-        //Toast.makeText(getApplicationContext(),"Turned off" ,Toast.LENGTH_LONG).show();
+       bluetoothLabel.setText("Bluetooth connection closed.");
     }
 
 
