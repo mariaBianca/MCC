@@ -3,7 +3,7 @@ package com.mccapp.bianca.mcc;
 import java.io.IOException;
 
 /**
- * @author Group Ella
+*  @author Group Ella
  */
 /**
  * This class represents the implementation of the Directions.

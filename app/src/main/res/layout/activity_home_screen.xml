@@ -19,7 +19,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" Play an episode "
+        android:text=" Play an episode"
         android:id="@+id/btnEpisode"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
@@ -27,7 +27,7 @@
         android:textColor="@color/primary_dark_material_dark"
         android:background="@android:color/holo_green_light" />
 
-    <ImageButton
+    <Button
         android:background="@drawable/bluetooth"
         android:layout_width="70dp"
         android:layout_height="60dp"
