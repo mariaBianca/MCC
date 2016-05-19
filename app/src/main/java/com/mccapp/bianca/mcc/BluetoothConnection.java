@@ -4,8 +4,9 @@ package com.mccapp.bianca.mcc;
  * Created by Group Ella.
  * */
 /**
- * This class represents the implementation the bluetooth connection.
+ * This class represents the implementation of the Bluetooth Connection view.
  * */
+
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -19,10 +20,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Set;
 import java.util.UUID;
-
-/**
- * This class represents the implementation of the Bluetooth Connection view.
- * */
 
 public class BluetoothConnection {
 
@@ -77,7 +74,6 @@ public class BluetoothConnection {
 
         beginListenForData();
         bluetoothLabel.setText("Bluetooth opened");
-        //Toast.makeText(getApplicationContext(),"Bluetooth connected!" ,Toast.LENGTH_LONG).show();;  UNCOMMENT HERE
     }
 
     static void beginListenForData()
@@ -115,7 +111,7 @@ public class BluetoothConnection {
                                     {
                                         public void run()
                                         {
-                                            //myLabel.setText(data);
+                                            bluetoothLabel.setText(data);
                                         }
                                     });
                                 }
