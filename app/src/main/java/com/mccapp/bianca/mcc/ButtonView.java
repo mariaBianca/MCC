@@ -10,14 +10,14 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
-import android.media.MediaPlayer;
+//import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,17 +37,17 @@ public class ButtonView extends AppCompatActivity {
     static byte[] readBuffer;
     static int readBufferPosition;
     volatile static boolean stopWorker;
-    MediaPlayer honk = MediaPlayer.create(getApplicationContext(), R.raw.startaudio );
+    //MediaPlayer honk = MediaPlayer.create(getApplicationContext(), R.raw.startaudio );
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        honk.start();
+        //honk.start();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        honk.stop();
+        //honk.stop();
 
         //button declaration
         Button bluetoothButton = (Button) this.findViewById(R.id.bluetoothBtn);
@@ -172,6 +172,7 @@ public class ButtonView extends AppCompatActivity {
         mmOutputStream.close();
         mmInputStream.close();
         mmSocket.close();
-        Toast.makeText(getApplicationContext(),"Turned off" ,Toast.LENGTH_LONG).show();        }
+        //Toast.makeText(getApplicationContext(),"Turned off" ,Toast.LENGTH_LONG).show();
+        }
 
 }
