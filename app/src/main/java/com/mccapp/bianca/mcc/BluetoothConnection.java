@@ -2,7 +2,7 @@ package com.mccapp.bianca.mcc;
 
 /**
  * Created by Group Ella.
- */
+        */
 /**
  * This class represents the implementation the bluetooth connection.
  * */
@@ -13,6 +13,7 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Handler;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,13 +36,15 @@ public class BluetoothConnection {
     static byte[] readBuffer;
     static int readBufferPosition;
     volatile static boolean stopWorker;
+    static TextView bluetoothLabel;
+
 
     static void findBT()
     {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if(mBluetoothAdapter == null)
         {
-            //myLabel.setText("No bluetooth adapter available");
+            bluetoothLabel.setText("No bluetooth adapter available");
         }
 
         if(!mBluetoothAdapter.isEnabled())
@@ -62,7 +65,7 @@ public class BluetoothConnection {
                 }
             }
         }
-        // myLabel.setText("Bluetooth Device Found");
+        bluetoothLabel.setText("Bluetooth Device Found");
     }
 
     static void openBT() throws IOException
@@ -74,6 +77,7 @@ public class BluetoothConnection {
         mmInputStream = mmSocket.getInputStream();
 
         beginListenForData();
+        bluetoothLabel.setText("Bluetooth opened");
         //Toast.makeText(getApplicationContext(),"Bluetooth connected!" ,Toast.LENGTH_LONG).show();;  UNCOMMENT HERE
     }
 

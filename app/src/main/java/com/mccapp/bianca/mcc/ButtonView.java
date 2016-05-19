@@ -15,7 +15,6 @@ import android.widget.TextView;
 public class ButtonView extends AppCompatActivity {
 
     BluetoothConnection bluetoothConnection = new BluetoothConnection();
-    TextView myLabel;
     //MediaPlayer honk = MediaPlayer.create(getApplicationContext(), R.raw.startaudio );
 
 
