@@ -25,10 +25,10 @@ public class HomeScreen extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //button declaration
-        Button buttonButtonView = (Button) this.findViewById(R.id.btnBluetooth);
+        Button buttonButtonView = (Button) this.findViewById(R.id.btnButton);
         Button buttonJoystickView = (Button) this.findViewById(R.id.btnJoystick);
         Button episodeButton = (Button) this.findViewById(R.id.btnEpisode);
-        Button bluetoothButton = (Button) this.findViewById(R.id.b);
+        Button bluetoothButton = (Button) this.findViewById(R.id.btnBluetooth);
 
     }
 
