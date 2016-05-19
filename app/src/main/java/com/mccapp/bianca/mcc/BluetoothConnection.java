@@ -3,6 +3,10 @@ package com.mccapp.bianca.mcc;
 /**
  * Created by Group Ella.
  */
+/**
+ * This class represents the implementation the bluetooth connection.
+ * */
+
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
