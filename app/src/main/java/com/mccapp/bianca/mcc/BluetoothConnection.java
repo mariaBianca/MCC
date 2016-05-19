@@ -7,7 +7,6 @@ package com.mccapp.bianca.mcc;
  * This class represents the implementation of the Bluetooth Connection view.
  * */
 
-
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
