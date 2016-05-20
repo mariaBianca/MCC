@@ -26,7 +26,7 @@ public class HomeScreen extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //button declaration
+        //button declaration for buttonView activity
         Button buttonButtonView = (Button) this.findViewById(R.id.btnButton);
         buttonButtonView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +36,7 @@ public class HomeScreen extends AppCompatActivity {
                                      }
                    });
 
+        //button declaration for JoystickView activity
         Button buttonJoystickView = (Button) this.findViewById(R.id.btnJoystick);
         buttonJoystickView.setOnClickListener(new View.OnClickListener(){
              @Override
@@ -45,8 +46,11 @@ public class HomeScreen extends AppCompatActivity {
              }
         });
 
+        //button declaration for  episode display activity
         Button buttonEpisode = (Button) this.findViewById(R.id.btnEpisode);
-        Button bluetoothButton = (Button) this.findViewById(R.id.btnBluetooth);
+
+        //button declaration for the bluetooth connection
+        Button buttonBluetooth = (Button) this.findViewById(R.id.btnBluetooth);
         Button video = (Button) this.findViewById(R.id.videoview);
 
 
