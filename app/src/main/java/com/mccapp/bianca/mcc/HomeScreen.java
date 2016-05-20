@@ -45,7 +45,7 @@ public class HomeScreen extends AppCompatActivity {
              }
         });
 
-        Button episodeButton = (Button) this.findViewById(R.id.btnEpisode);
+        Button buttonEpisode = (Button) this.findViewById(R.id.btnEpisode);
         Button bluetoothButton = (Button) this.findViewById(R.id.btnBluetooth);
         Button video = (Button) this.findViewById(R.id.videoview);
 
