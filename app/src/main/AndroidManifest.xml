@@ -35,9 +35,15 @@
         <activity
             android:name=".ButtonView"
             android:label="The Magic School Bus"
-            android:theme="@style/AlertDialog.AppCompat">
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
 
         </activity>
+
     </application>
 
 </manifest>

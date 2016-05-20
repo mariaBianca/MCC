@@ -29,6 +29,7 @@ public class HomeScreen extends AppCompatActivity {
         //button declaration
         Button buttonButtonView = (Button) this.findViewById(R.id.btnButton);
         buttonButtonView.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                             Intent intent = new Intent(getApplicationContext(), ButtonView.class);
                             startActivity(intent);
@@ -36,6 +37,14 @@ public class HomeScreen extends AppCompatActivity {
                    });
 
         Button buttonJoystickView = (Button) this.findViewById(R.id.btnJoystick);
+        buttonJoystickView.setOnClickListener(new View.OnClickListener(){
+             @Override
+            public void onClick(View view){
+                 Intent intent = new Intent(getApplicationContext(), JoystickView.class);
+                 // startActivity(intent);
+             }
+        });
+
         Button episodeButton = (Button) this.findViewById(R.id.btnEpisode);
         Button bluetoothButton = (Button) this.findViewById(R.id.btnBluetooth);
         Button video = (Button) this.findViewById(R.id.videoview);
