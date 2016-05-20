@@ -7,6 +7,7 @@ package com.mccapp.bianca.mcc;
  * This class represents the implementation of the Key Listeners for all the buttons used throughout the app.
  * */
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
@@ -15,7 +16,7 @@ import java.io.IOException;
 public class Listeners {
 
     /**
-     * Method to set the keyListener for the bluetoothButton
+     * Method to set the keyListener for the buttons.
      * */
 
     BluetoothConnection bc;
@@ -93,4 +94,5 @@ public class Listeners {
             }
         });
     }
+
 }

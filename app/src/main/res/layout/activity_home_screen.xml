@@ -58,5 +58,14 @@
         android:backgroundTint="@android:color/holo_green_light"
         android:textColor="@color/abc_primary_text_disable_only_material_light"
         android:layout_centerVertical="true"
+        android:onClick="onClick"
         android:layout_alignStart="@+id/btnJoystick" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_alignBottom="@+id/btnJoystick"
+        android:layout_toStartOf="@+id/btnBluetooth" />
 </RelativeLayout>

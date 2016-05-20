@@ -31,8 +31,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".VideoThing"/>
 
+        <activity
+            android:name=".ButtonView"
+            android:label="The Magic School Bus"
+            android:theme="@style/AlertDialog.AppCompat">
+
+        </activity>
     </application>
 
 </manifest>
