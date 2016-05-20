@@ -20,7 +20,7 @@ public class HomeScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_screen);
+        setContentView(R.layout.video);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -29,6 +29,7 @@ public class HomeScreen extends AppCompatActivity {
         Button buttonJoystickView = (Button) this.findViewById(R.id.btnJoystick);
         Button episodeButton = (Button) this.findViewById(R.id.btnEpisode);
         Button bluetoothButton = (Button) this.findViewById(R.id.btnBluetooth);
+        Button video = (Button) this.findViewById(R.id.videoview);
 
     }
 

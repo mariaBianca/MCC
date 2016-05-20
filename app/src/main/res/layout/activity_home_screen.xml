@@ -59,4 +59,16 @@
         android:textColor="@color/abc_primary_text_disable_only_material_light"
         android:layout_centerVertical="true"
         android:layout_alignStart="@+id/btnJoystick" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Video"
+        android:id="@+id/videoview"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTintMode="src_in"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:textColor="@color/abc_primary_text_disable_only_material_light"
+        android:layout_alignStart="@+id/btnJoystick" />
 </RelativeLayout>
