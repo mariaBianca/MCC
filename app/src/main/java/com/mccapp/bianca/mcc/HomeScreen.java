@@ -51,6 +51,7 @@ public class HomeScreen extends AppCompatActivity {
 
         //button declaration for the bluetooth connection
         Button buttonBluetooth = (Button) this.findViewById(R.id.btnBluetooth);
+
         Button video = (Button) this.findViewById(R.id.videoview);
 
 
