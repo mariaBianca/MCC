@@ -22,9 +22,9 @@ public class HomeScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.video_view);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_home_screen);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         //button declaration for buttonView activity
         Button buttonButtonView = (Button) this.findViewById(R.id.btnButton);
@@ -41,8 +41,8 @@ public class HomeScreen extends AppCompatActivity {
         buttonJoystickView.setOnClickListener(new View.OnClickListener(){
              @Override
             public void onClick(View view){
-                 Intent intent = new Intent(getApplicationContext(), JoystickView.class);
-                 // startActivity(intent);
+                 //Intent intent = new Intent(getApplicationContext(), JoystickView.class);
+                 //WstartActivity(intent);
              }
         });
 
