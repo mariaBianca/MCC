@@ -7,7 +7,6 @@ package com.mccapp.bianca.mcc;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
@@ -39,8 +38,8 @@ public class HomeScreen extends AppCompatActivity {
         buttonJoystickView.setOnClickListener(new View.OnClickListener(){
              @Override
             public void onClick(View view){
-                 //Intent intent = new Intent(getApplicationContext(), JoystickView.class);
-                 //WstartActivity(intent);
+                 Intent intent = new Intent(HomeScreen.this, JoystickControl.class);
+                 startActivity(intent);
              }
         });
 
@@ -49,6 +48,7 @@ public class HomeScreen extends AppCompatActivity {
 
         //button declaration for the bluetooth connection
         Button buttonBluetooth = (Button) this.findViewById(R.id.btnBluetooth);
+        Listeners.BluetoothListener(buttonBluetooth);
 
         Button video = (Button) this.findViewById(R.id.videoview);
 

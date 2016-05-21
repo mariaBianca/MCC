@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.mccapp.bianca.mcc.JoystickControl">
+
+
+
+
+        <!-- View where the video will be shown when video goes fullscreen -->
+
+
+        <com.mccapp.bianca.mcc.JoystickView
+
+            com.mccapp.bianca.mcc.JoystickView=".com.mccapp.bianca.mcc.JoystickView"
+            android:id="@+id/joystickView"
+            android:layout_height="180dp"
+            android:layout_width="180dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="66dp">
+
+
+        </com.mccapp.bianca.mcc.JoystickView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:id="@+id/angleTextView"
+            android:text="A="
+            android:background="#212121"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:layout_below="@+id/textView"
+            android:layout_toRightOf="@+id/forwardButton"
+            android:layout_toEndOf="@+id/forwardButton" />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P="
+            android:background="#212121"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:id="@+id/powerTextView"
+            android:layout_below="@+id/angleTextView"
+            android:layout_alignLeft="@+id/angleTextView"
+            android:layout_alignStart="@+id/angleTextView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dir="
+            android:background="#212121"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:id="@+id/directionTextView"
+            android:layout_below="@+id/powerTextView"
+            android:layout_alignLeft="@+id/powerTextView"
+            android:layout_alignStart="@+id/powerTextView" />
+
+
+
+
+    </RelativeLayout>

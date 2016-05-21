@@ -39,7 +39,7 @@ public class BluetoothConnection {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if(mBluetoothAdapter == null)
         {
-            bluetoothLabel.setText("No bluetooth adapter available");
+            //bluetoothLabel.setText("No bluetooth adapter available");
         }
 
         if(!mBluetoothAdapter.isEnabled())
@@ -60,7 +60,7 @@ public class BluetoothConnection {
                 }
             }
         }
-        bluetoothLabel.setText("Bluetooth Device Found");
+       // bluetoothLabel.setText("Bluetooth Device Found");
     }
 
     public static void openBT() throws IOException
@@ -72,7 +72,7 @@ public class BluetoothConnection {
         mmInputStream = mmSocket.getInputStream();
 
         beginListenForData();
-        bluetoothLabel.setText("Bluetooth opened");
+        //bluetoothLabel.setText("Bluetooth opened");
     }
 
     public static void beginListenForData()
@@ -139,7 +139,7 @@ public class BluetoothConnection {
         mmOutputStream.close();
         mmInputStream.close();
         mmSocket.close();
-       bluetoothLabel.setText("Bluetooth connection closed.");
+       //bluetoothLabel.setText("Bluetooth connection closed.");
     }
 
 

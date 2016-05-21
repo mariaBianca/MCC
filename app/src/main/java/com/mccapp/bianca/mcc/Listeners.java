@@ -19,7 +19,6 @@ public class Listeners {
      * Method to set the keyListener for the buttons.
      * */
 
-    BluetoothConnection bc;
 
     public static void BluetoothListener(Button button){
 
