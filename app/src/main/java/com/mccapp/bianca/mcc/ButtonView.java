@@ -7,6 +7,7 @@ package com.mccapp.bianca.mcc;
  * */
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 
@@ -14,7 +15,8 @@ public class ButtonView extends Activity {
 
     BluetoothConnection bc;
 
-     void Button() {
+      protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_button_view);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
