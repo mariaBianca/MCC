@@ -45,16 +45,15 @@
         android:layout_height="60dp"
         android:background="@drawable/leftarrow"
         android:layout_alignTop="@+id/stop"
-        android:layout_toStartOf="@+id/UnderTitle" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="50dp"
         android:layout_height="60dp"
         android:background="@drawable/pause"
         android:id="@+id/stop"
-        android:layout_below="@+id/up"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp" />
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/down" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -63,7 +62,7 @@
         android:layout_width="50dp"
         android:layout_height="60dp"
         android:layout_alignTop="@+id/stop"
-        android:layout_toEndOf="@+id/UnderTitle" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -71,9 +70,10 @@
         android:layout_width="50dp"
         android:layout_height="60dp"
         android:id="@+id/down"
+        android:layout_marginTop="51dp"
         android:layout_below="@+id/stop"
-        android:layout_alignStart="@+id/stop"
-        android:layout_marginTop="51dp" />
+        android:layout_toStartOf="@+id/mylabel"
+        android:layout_marginEnd="45dp" />
 
     <Button
         android:id="@+id/up"
@@ -81,15 +81,17 @@
         android:layout_width="50dp"
         android:layout_height="60dp"
         android:layout_below="@+id/UnderTitle"
-        android:layout_alignStart="@+id/stop" />
+        android:layout_alignStart="@+id/stop"
+        android:layout_marginTop="37dp" />
 
     <Button
         android:id="@+id/bluetoothBtn"
         android:background="@drawable/bluetooth"
         android:layout_width="70dp"
         android:layout_height="60dp"
-        android:layout_below="@+id/down"
-        android:layout_alignStart="@+id/titleView" />
+        android:layout_alignTop="@+id/down"
+        android:layout_toEndOf="@+id/UnderTitle"
+        android:layout_marginTop="24dp" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -21,11 +21,12 @@
         android:layout_height="wrap_content"
         android:text=" Play an episode"
         android:id="@+id/btnEpisode"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="30dp"
         android:textColor="@color/primary_dark_material_dark"
-        android:background="@android:color/holo_green_light" />
+        android:background="@android:color/holo_green_light"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/btnJoystick"
+        android:layout_alignEnd="@+id/btnButton"
+        android:layout_marginEnd="22dp" />
 
     <Button
         android:background="@drawable/bluetooth"
@@ -45,7 +46,8 @@
         android:textColor="@color/abc_primary_text_disable_only_material_light"
         android:background="@android:color/holo_green_light"
         android:layout_below="@+id/btnButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignStart="@+id/btnButton"
+        android:layout_marginTop="38dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -57,8 +59,9 @@
         android:backgroundTintMode="src_in"
         android:backgroundTint="@android:color/holo_green_light"
         android:textColor="@color/abc_primary_text_disable_only_material_light"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/btnJoystick" />
+        android:layout_below="@+id/btnBluetooth"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_marginTop="95dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -70,5 +73,7 @@
         android:backgroundTintMode="src_in"
         android:backgroundTint="@android:color/holo_green_light"
         android:textColor="@color/abc_primary_text_disable_only_material_light"
-        android:layout_alignStart="@+id/btnJoystick" />
+        android:layout_below="@+id/btnBluetooth"
+        android:layout_alignStart="@+id/btnEpisode"
+        android:layout_marginStart="25dp" />
 </RelativeLayout>
