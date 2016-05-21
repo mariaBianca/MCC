@@ -19,8 +19,6 @@ public class ButtonView extends Activity {
       super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_button_view);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
          //button declaration
         Button bluetoothButton = (Button) this.findViewById(R.id.bluetoothBtn);
