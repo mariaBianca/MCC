@@ -23,10 +23,10 @@
         android:id="@+id/btnEpisode"
         android:textColor="@color/primary_dark_material_dark"
         android:background="@android:color/holo_green_light"
-        android:layout_marginTop="37dp"
+        android:layout_marginStart="23dp"
         android:layout_below="@+id/btnJoystick"
-        android:layout_alignEnd="@+id/btnButton"
-        android:layout_marginEnd="22dp" />
+        android:layout_alignStart="@+id/btnJoystick"
+        android:layout_marginTop="49dp" />
 
     <Button
         android:background="@drawable/bluetooth"
