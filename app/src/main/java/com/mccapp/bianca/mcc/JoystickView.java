@@ -7,6 +7,10 @@ package com.mccapp.bianca.mcc;
  * This class represents the implementation of the Joystick controller view.
  * */
 
+/**
+ * This class has been refactored from a resource on StackOverflow.
+ * */
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -70,11 +74,11 @@ public class JoystickView extends View implements Runnable {
         secondaryCircle.setStyle(Paint.Style.STROKE);
 
         verticalLine = new Paint();
-        verticalLine.setStrokeWidth(5);
-        verticalLine.setColor(Color.RED);
+        verticalLine.setStrokeWidth(1);
+        verticalLine.setColor(Color.BLACK);
 
         horizontalLine = new Paint();
-        horizontalLine.setStrokeWidth(2);
+        horizontalLine.setStrokeWidth(1);
         horizontalLine.setColor(Color.BLACK);
 
         button = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -94,7 +98,7 @@ public class JoystickView extends View implements Runnable {
         xPosition = (int) getWidth() / 2;
         yPosition = (int) getWidth() / 2;
         int d = Math.min(xNew, yNew);
-        buttonRadius = (int) (d / 2 * 0.25);
+        buttonRadius = (int) (d / 5 * 0.25);
         joystickRadius = (int) (d / 2 * 0.75);
 
     }

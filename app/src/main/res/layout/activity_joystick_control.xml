@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="com.mccapp.bianca.mcc.JoystickControl">
 
 
@@ -19,11 +20,11 @@
 
             com.mccapp.bianca.mcc.JoystickView=".com.mccapp.bianca.mcc.JoystickView"
             android:id="@+id/joystickView"
-            android:layout_height="180dp"
-            android:layout_width="180dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="66dp">
+            android:layout_height="280dp"
+            android:layout_width="280dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="80dp">
 
 
         </com.mccapp.bianca.mcc.JoystickView>
@@ -31,36 +32,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
             android:id="@+id/angleTextView"
-            android:text="A="
-            android:background="#212121"
-            android:textColor="#FFF"
+            android:text="Angle:"
+            android:textColor="#202020"
             android:textStyle="bold"
-            android:layout_below="@+id/textView"
-            android:layout_toRightOf="@+id/forwardButton"
-            android:layout_toEndOf="@+id/forwardButton" />
+            android:layout_below="@+id/directionTextView"
+            android:layout_alignStart="@+id/directionTextView" />
 
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="P="
-            android:background="#212121"
-            android:textColor="#FFF"
+            android:text="Speed:"
+            android:textColor="#202020"
             android:textStyle="bold"
             android:id="@+id/powerTextView"
-            android:layout_below="@+id/angleTextView"
-            android:layout_alignLeft="@+id/angleTextView"
-            android:layout_alignStart="@+id/angleTextView" />
+            android:layout_alignBottom="@+id/joystickView"
+            android:layout_alignEnd="@+id/joystickView" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="dir="
-            android:background="#212121"
-            android:textColor="#FFF"
+            android:text="Direction:"
+            android:textColor="#202020"
             android:textStyle="bold"
             android:id="@+id/directionTextView"
             android:layout_below="@+id/powerTextView"
