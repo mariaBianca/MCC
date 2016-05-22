@@ -6,7 +6,7 @@ import android.webkit.WebView;
 
 
 /**
- * Created by mika on 2016-05-21.
+ * Created by Team Ella on 2016-05-21.
  */
 public class Webplayer extends AppCompatActivity {
 
