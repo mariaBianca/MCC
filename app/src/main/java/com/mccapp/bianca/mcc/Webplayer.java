@@ -2,6 +2,7 @@ package com.mccapp.bianca.mcc;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 
@@ -15,8 +16,11 @@ public class Webplayer extends AppCompatActivity {
     setContentView(R.layout.web_view);
 
     WebView webView = (WebView) findViewById(R.id.webView);
-    webView.loadUrl("https://www.youtube.com/watch?v=_2kx8vJBR_s");
+    webView.loadUrl("http://192.168.43.171/");
+
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
 
 
-}
+    }
 }
