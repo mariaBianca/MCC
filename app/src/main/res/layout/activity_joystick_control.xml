@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/background"
-    tools:context="com.mccapp.bianca.mcc.JoystickControl">
-
-
-
-
-        <!-- View where the video will be shown when video goes fullscreen -->
-
+    android:layout_height="match_parent">
 
         <com.mccapp.bianca.mcc.JoystickView
 
@@ -22,9 +9,7 @@
             android:id="@+id/joystickView"
             android:layout_height="280dp"
             android:layout_width="280dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="80dp">
+            android:layout_alignParentBottom="true">
 
 
         </com.mccapp.bianca.mcc.JoystickView>
@@ -36,8 +21,9 @@
             android:text="Angle:"
             android:textColor="#202020"
             android:textStyle="bold"
-            android:layout_below="@+id/directionTextView"
-            android:layout_alignStart="@+id/directionTextView" />
+            android:layout_alignBottom="@+id/joystickView"
+            android:layout_toStartOf="@+id/videoView"
+            android:layout_marginBottom="47dp" />
 
 
 
@@ -48,8 +34,8 @@
             android:textColor="#202020"
             android:textStyle="bold"
             android:id="@+id/powerTextView"
-            android:layout_alignBottom="@+id/joystickView"
-            android:layout_alignEnd="@+id/joystickView" />
+            android:layout_above="@+id/angleTextView"
+            android:layout_toLeftOf="@+id/videoView" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -58,11 +44,12 @@
             android:textColor="#202020"
             android:textStyle="bold"
             android:id="@+id/directionTextView"
-            android:layout_below="@+id/powerTextView"
-            android:layout_alignLeft="@+id/powerTextView"
-            android:layout_alignStart="@+id/powerTextView" />
+            android:layout_above="@+id/powerTextView"
+            android:layout_toLeftOf="@+id/videoView" />
 
-
-
-
-    </RelativeLayout>
+        <VideoView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/videoView"
+            android:layout_alignParentEnd="true" />
+</RelativeLayout>
