@@ -9,6 +9,8 @@ package com.mccapp.bianca.mcc;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Button;
 
 public class ButtonView extends Activity {
@@ -20,7 +22,8 @@ public class ButtonView extends Activity {
 
         setContentView(R.layout.activity_button_view);
 
-         //button declaration
+
+        //button declaration
         Button bluetoothButton = (Button) this.findViewById(R.id.bluetoothBtn);
         Button upButton = (Button) this.findViewById(R.id.up);
         Button downButton = (Button) this.findViewById(R.id.down);

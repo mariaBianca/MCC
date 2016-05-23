@@ -24,10 +24,10 @@
         android:id="@+id/btnEpisode"
         android:textColor="@color/primary_dark_material_dark"
         android:background="@android:color/holo_green_light"
-        android:layout_marginStart="23dp"
         android:layout_below="@+id/btnJoystick"
+        android:layout_marginTop="33dp"
         android:layout_alignStart="@+id/btnJoystick"
-        android:layout_marginTop="49dp" />
+        android:layout_alignEnd="@+id/linearLayout" />
 
     <Button
         android:background="@drawable/bluetooth"
@@ -48,7 +48,7 @@
         android:background="@android:color/holo_green_light"
         android:layout_below="@+id/btnButton"
         android:layout_alignStart="@+id/btnButton"
-        android:layout_marginTop="38dp" />
+        android:layout_marginTop="33dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -60,21 +60,15 @@
         android:backgroundTintMode="src_in"
         android:backgroundTint="@android:color/holo_green_light"
         android:textColor="@color/abc_primary_text_disable_only_material_light"
-        android:layout_below="@+id/btnBluetooth"
-        android:layout_alignEnd="@+id/linearLayout"
-        android:layout_marginTop="95dp" />
+        android:layout_alignBottom="@+id/linearLayout"
+        android:layout_alignParentStart="true" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Video"
-        android:id="@+id/videoview"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTintMode="src_in"
-        android:backgroundTint="@android:color/holo_green_light"
-        android:textColor="@color/abc_primary_text_disable_only_material_light"
+        android:text="Your mobile controlled car"
+        android:id="@+id/textView"
         android:layout_below="@+id/btnBluetooth"
-        android:layout_alignStart="@+id/btnEpisode"
-        android:layout_marginStart="25dp" />
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

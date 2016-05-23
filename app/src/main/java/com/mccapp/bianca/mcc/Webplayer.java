@@ -13,7 +13,7 @@ public class Webplayer extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.web_view);
+    setContentView(R.layout.activity_joystick_control);
 
     WebView webView = (WebView) findViewById(R.id.webView);
     webView.loadUrl("http://192.168.43.171/");

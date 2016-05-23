@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -20,7 +21,6 @@ public class JoystickControl extends AppCompatActivity {
     public TextView directionTextView;
     TextView movement;
     View view;
-    private static final String MOVIE_URL = "http://192.168.43.171/";
 
     //  private VideoEnabledWebView webView;
     // private VideoEnabledWebChromeClient webChromeClient;
@@ -35,16 +35,16 @@ public class JoystickControl extends AppCompatActivity {
         angleTextView = (TextView) findViewById(R.id.angleTextView);
         powerTextView = (TextView)findViewById(R.id.powerTextView);
         directionTextView = (TextView) findViewById(R.id.directionTextView);
-        // movement = (TextView) view.findViewById(R.id.moveLabel);
+
         //Referencing also other views
         joystick1 = (com.mccapp.bianca.mcc.JoystickView) findViewById(R.id.joystickView);
-        VideoView vid = (VideoView) findViewById(R.id.videoView);
-        //vid.setVideoPath("/DCIM/Camera/VID_20151204_093412.mp4");
-        Uri video = Uri.parse(MOVIE_URL);
-        vid.setMediaController(new MediaController(this));
-        vid.setVideoURI(video);
-        vid.start();
-        vid.requestFocus();
+        WebView webView = (WebView) findViewById(R.id.webView);
+        webView.loadUrl("http://192.168.43.171/");
+
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+
         //Event listener that always returns the variation of the angle in degrees, motion power in percentage and direction of movement
         joystick1.setOnJoystickMoveListener(new com.mccapp.bianca.mcc.JoystickView.OnJoystickMoveListener() {
 

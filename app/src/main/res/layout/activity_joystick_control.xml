@@ -3,6 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+        <RelativeLayout android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+                <WebView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@android:color/transparent"
+                    android:id="@+id/webView"
+                    android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
         <com.mccapp.bianca.mcc.JoystickView
 
             com.mccapp.bianca.mcc.JoystickView=".com.mccapp.bianca.mcc.JoystickView"
@@ -13,7 +24,6 @@
 
 
         </com.mccapp.bianca.mcc.JoystickView>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,8 +34,6 @@
             android:layout_alignBottom="@+id/joystickView"
             android:layout_toStartOf="@+id/videoView"
             android:layout_marginBottom="47dp" />
-
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -45,11 +53,6 @@
             android:textStyle="bold"
             android:id="@+id/directionTextView"
             android:layout_above="@+id/powerTextView"
-            android:layout_toLeftOf="@+id/videoView" />
+            />
 
-        <VideoView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/videoView"
-            android:layout_alignParentEnd="true" />
 </RelativeLayout>
