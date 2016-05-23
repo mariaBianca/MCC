@@ -44,8 +44,9 @@
         android:layout_width="50dp"
         android:layout_height="60dp"
         android:background="@drawable/leftarrow"
-        android:layout_alignTop="@+id/stop"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/down"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp" />
 
     <Button
         android:layout_width="50dp"
@@ -53,7 +54,7 @@
         android:background="@drawable/pause"
         android:id="@+id/stop"
         android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/down" />
+        android:layout_alignEnd="@+id/mylabel" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -61,8 +62,9 @@
         android:background="@drawable/rightarrow"
         android:layout_width="50dp"
         android:layout_height="60dp"
-        android:layout_alignTop="@+id/stop"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/down"
+        android:layout_alignEnd="@+id/bluetoothBtn"
+        android:layout_marginEnd="39dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -70,10 +72,9 @@
         android:layout_width="50dp"
         android:layout_height="60dp"
         android:id="@+id/down"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="55dp"
         android:layout_below="@+id/stop"
-        android:layout_toStartOf="@+id/mylabel"
-        android:layout_marginEnd="45dp" />
+        android:layout_alignStart="@+id/stop" />
 
     <Button
         android:id="@+id/up"
