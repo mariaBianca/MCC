@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.MediaController;
@@ -39,11 +40,14 @@ public class JoystickControl extends AppCompatActivity {
         //Referencing also other views
         joystick1 = (com.mccapp.bianca.mcc.JoystickView) findViewById(R.id.joystickView);
         WebView webView = (WebView) findViewById(R.id.webView);
-        webView.loadUrl("http://www.slashdot.org");
+        webView.loadUrl("http://192.168.43.171/");
         //raspberry-pi  http://192.168.43.171/
 
         webView.setWebViewClient(new WebplayerClient());
-        
+       //webView.setWebChromeClient(new WebplayerChromeClient());
+
+
+
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
