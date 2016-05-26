@@ -16,7 +16,9 @@ public class Webplayer extends AppCompatActivity {
     setContentView(R.layout.activity_joystick_control);
 
     WebView webView = (WebView) findViewById(R.id.webView);
-    webView.loadUrl("http://192.168.43.171/");
+      webView.setWebViewClient(new WebplayerClient());
+    webView.loadUrl("http://www.example.com");
+        //raspberry-pi  http://192.168.43.171/
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
