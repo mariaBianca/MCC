@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 
 /**
@@ -45,12 +46,19 @@ public class HomeScreen extends AppCompatActivity {
 
         //button declaration for  episode display activity
         Button buttonEpisode = (Button) this.findViewById(R.id.btnEpisode);
+        buttonEpisode.setOnClickListener(new View.OnClickListener(){
+           public void onClick(View view) {
+               Intent intent = new Intent(HomeScreen.this, Episode.class);
+               startActivity(intent);
+                               }
+           });
+
 
         //button declaration for the bluetooth connection
         Button buttonBluetooth = (Button) this.findViewById(R.id.btnBluetooth);
         Listeners.BluetoothListener(buttonBluetooth);
 
-        Button video = (Button) this.findViewById(R.id.videoview);
+        //Button video = (Button) this.findViewById(R.id.videoview);
 
 
     }

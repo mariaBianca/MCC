@@ -28,7 +28,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".HomeScreen"
-            android:screenOrientation="landscape">
+            android:screenOrientation="portrait">
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -37,6 +37,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity
             android:name=".ButtonView"
             android:screenOrientation="portrait"
@@ -48,7 +50,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".JoystickControl"></activity>
+
+        <activity android:name=".JoystickControl"
+            android:screenOrientation="landscape">
+
+
+        </activity>
+
+        <activity android:name=".Episode"></activity>
     </application>
 
 </manifest>
