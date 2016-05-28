@@ -13,12 +13,15 @@ public class Webplayer extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_joystick_control);
+    setContentView(R.layout.episode_view);
 
     WebView webView = (WebView) findViewById(R.id.webView);
       webView.setWebViewClient(new WebplayerClient());
-    webView.loadUrl("http://www.example.com");
+        webView.loadUrl("https://youtu.be/_2kx8vJBR_s");
         //raspberry-pi  http://192.168.43.171/
+
+        webView.setWebViewClient(new WebplayerClient());
+        webView.setWebChromeClient(new WebplayerChromeClient());
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);

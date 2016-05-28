@@ -25,13 +25,13 @@ public class JoystickControl extends AppCompatActivity {
     TextView movement;
     View view;
 
-    //  private VideoEnabledWebView webView;
-    //  private VideoEnabledWebChromeClient webChromeClient;
     //  Importing also other views
     private com.mccapp.bianca.mcc.JoystickView joystick1;
 
 
     @Override
+
+    // Beginning of the activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joystick_control);
@@ -42,18 +42,18 @@ public class JoystickControl extends AppCompatActivity {
 
         //Referencing also other views
         joystick1 = (com.mccapp.bianca.mcc.JoystickView) findViewById(R.id.joystickView);
-        WebView webView = (WebView) findViewById(R.id.webView);
-        webView.loadUrl("http://slashdot.org/");
-        //raspberry-pi  http://192.168.43.171/
 
+        // Webview for the live feedback
+        WebView webView = (WebView) findViewById(R.id.webView);
+        webView.loadUrl("http://192.168.43.171/");
+        //raspberry-pi  http://192.168.43.171/
         webView.setWebViewClient(new WebplayerClient());
         webView.setWebChromeClient(new WebplayerChromeClient());
         WebSettings webSettings = webView.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
 
 
-        //Event listener that always returns the variation of the angle in degrees, motion power in percentage and direction of movement
+        // Event listener that always returns the variation of the angle in degrees, motion power in percentage and direction of movement
         joystick1.setOnJoystickMoveListener(new com.mccapp.bianca.mcc.JoystickView.OnJoystickMoveListener() {
 
             @Override
