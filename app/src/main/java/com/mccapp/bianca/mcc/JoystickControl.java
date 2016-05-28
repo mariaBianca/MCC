@@ -4,9 +4,11 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -24,8 +26,8 @@ public class JoystickControl extends AppCompatActivity {
     View view;
 
     //  private VideoEnabledWebView webView;
-    // private VideoEnabledWebChromeClient webChromeClient;
-    // Importing also other views
+    //  private VideoEnabledWebChromeClient webChromeClient;
+    //  Importing also other views
     private com.mccapp.bianca.mcc.JoystickView joystick1;
 
 
@@ -34,21 +36,20 @@ public class JoystickControl extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joystick_control);
         angleTextView = (TextView) findViewById(R.id.angleTextView);
-        powerTextView = (TextView)findViewById(R.id.powerTextView);
+        powerTextView = (TextView) findViewById(R.id.powerTextView);
         directionTextView = (TextView) findViewById(R.id.directionTextView);
+
 
         //Referencing also other views
         joystick1 = (com.mccapp.bianca.mcc.JoystickView) findViewById(R.id.joystickView);
         WebView webView = (WebView) findViewById(R.id.webView);
-        webView.loadUrl("http://192.168.43.171/");
+        webView.loadUrl("http://slashdot.org/");
         //raspberry-pi  http://192.168.43.171/
 
         webView.setWebViewClient(new WebplayerClient());
-       //webView.setWebChromeClient(new WebplayerChromeClient());
-
-
-
+        webView.setWebChromeClient(new WebplayerChromeClient());
         WebSettings webSettings = webView.getSettings();
+
         webSettings.setJavaScriptEnabled(true);
 
 
@@ -69,8 +70,7 @@ public class JoystickControl extends AppCompatActivity {
                         //int move = Integer.parseInt();
 
 
-                        BluetoothConnection.mmOutputStream.write((""+power+"."+angle+"#").getBytes());
-
+                        BluetoothConnection.mmOutputStream.write(("" + power + "." + angle + "#").getBytes());
                         // FirstFragment.mmOutputStream.write(("t"+angle).getBytes());
 
                     } catch (IOException e) {

@@ -2,6 +2,10 @@ package com.mccapp.bianca.mcc;
 
 /**
  * @author Group Ella.
+ * <p/>
+ * This class represents the implementation of the Joystick controller view.
+ * <p/>
+ * This class has been refactored from a resource on StackOverflow.
  */
 /**
  * This class represents the implementation of the Joystick controller view.

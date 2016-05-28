@@ -2,10 +2,10 @@ package com.mccapp.bianca.mcc;
 
 /**
  * @author group Ella.
- * */
-/**
+ * <p/>
  * This class represents the implementation of the Bluetooth Connection view.
- * */
+ */
+
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -34,37 +34,30 @@ public class BluetoothConnection {
     static TextView bluetoothLabel;
 
 
-    public static void findBT()
-    {
+    public static void findBT() {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if(mBluetoothAdapter == null)
-        {
+        if (mBluetoothAdapter == null) {
             //bluetoothLabel.setText("No bluetooth adapter available");
         }
 
-        if(!mBluetoothAdapter.isEnabled())
-        {
+        if (!mBluetoothAdapter.isEnabled()) {
             Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             //startActivityForResult(enableBluetooth, 0);
         }
 
         Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
-        if(pairedDevices.size() > 0)
-        {
-            for(BluetoothDevice device : pairedDevices)
-            {
-                if(device.getName().equals("HC-06"))
-                {
+        if (pairedDevices.size() > 0) {
+            for (BluetoothDevice device : pairedDevices) {
+                if (device.getName().equals("HC-06")) {
                     mmDevice = device;
                     break;
                 }
             }
         }
-       // bluetoothLabel.setText("Bluetooth Device Found");
+        // bluetoothLabel.setText("Bluetooth Device Found");
     }
 
-    public static void openBT() throws IOException
-    {
+    public static void openBT() throws IOException {
         UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb"); //Standard SerialPortService ID
         mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
         mmSocket.connect();
@@ -75,54 +68,40 @@ public class BluetoothConnection {
         //bluetoothLabel.setText("Bluetooth opened");
     }
 
-    public static void beginListenForData()
-    {
+    public static void beginListenForData() {
         final Handler handler = new Handler();
         final byte delimiter = 10; //This is the ASCII code for a newline character
 
         stopWorker = false;
         readBufferPosition = 0;
         readBuffer = new byte[1024];
-        workerThread = new Thread(new Runnable()
-        {
-            public void run()
-            {
-                while(!Thread.currentThread().isInterrupted() && !stopWorker)
-                {
-                    try
-                    {
+        workerThread = new Thread(new Runnable() {
+            public void run() {
+                while (!Thread.currentThread().isInterrupted() && !stopWorker) {
+                    try {
                         int bytesAvailable = mmInputStream.available();
-                        if(bytesAvailable > 0)
-                        {
+                        if (bytesAvailable > 0) {
                             byte[] packetBytes = new byte[bytesAvailable];
                             mmInputStream.read(packetBytes);
-                            for(int i=0;i<bytesAvailable;i++)
-                            {
+                            for (int i = 0; i < bytesAvailable; i++) {
                                 byte b = packetBytes[i];
-                                if(b == delimiter)
-                                {
+                                if (b == delimiter) {
                                     byte[] encodedBytes = new byte[readBufferPosition];
                                     System.arraycopy(readBuffer, 0, encodedBytes, 0, encodedBytes.length);
                                     final String data = new String(encodedBytes, "US-ASCII");
                                     readBufferPosition = 0;
 
-                                    handler.post(new Runnable()
-                                    {
-                                        public void run()
-                                        {
+                                    handler.post(new Runnable() {
+                                        public void run() {
                                             bluetoothLabel.setText(data);
                                         }
                                     });
-                                }
-                                else
-                                {
+                                } else {
                                     readBuffer[readBufferPosition++] = b;
                                 }
                             }
                         }
-                    }
-                    catch (IOException ex)
-                    {
+                    } catch (IOException ex) {
                         stopWorker = true;
                     }
                 }
@@ -133,13 +112,12 @@ public class BluetoothConnection {
     }
 
 
-    public void closeBT() throws IOException
-    {
+    public void closeBT() throws IOException {
         stopWorker = true;
         mmOutputStream.close();
         mmInputStream.close();
         mmSocket.close();
-       //bluetoothLabel.setText("Bluetooth connection closed.");
+        //bluetoothLabel.setText("Bluetooth connection closed.");
     }
 
 
