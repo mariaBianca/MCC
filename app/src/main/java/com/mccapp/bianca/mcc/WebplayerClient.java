@@ -9,7 +9,7 @@ import android.webkit.WebViewClient;
  */
 public class WebplayerClient extends WebViewClient {
 
-// The application remains in control when a link is pressed
+    // The application remains in control when a link is pressed
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         view.loadUrl(url);
         return true;

@@ -16,14 +16,14 @@ public class Episode extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.episode_view);
 
-
+        // Create webview and load the url
         WebView webView = (WebView) findViewById(R.id.webView);
-        webView.setWebViewClient(new WebplayerClient());
         webView.loadUrl("https://youtu.be/_2kx8vJBR_s");
 
-        webView.setWebViewClient(new WebplayerClient());
+        //webView.setWebViewClient(new WebplayerClient());
         webView.setWebChromeClient(new WebplayerChromeClient());
 
+        // Enable the necessary and Javascript
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
