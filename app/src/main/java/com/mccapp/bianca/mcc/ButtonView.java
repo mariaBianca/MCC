@@ -24,15 +24,6 @@ public class ButtonView extends Activity {
         setContentView(R.layout.activity_button_view);
 
 
-        // Webview for the live feedback
-        WebView webView = (WebView) findViewById(R.id.webView);
-        webView.loadUrl("http://192.168.43.171");
-        //raspberry-pi  http://192.168.43.171/
-        webView.setWebViewClient(new WebplayerClient());
-        webView.setWebChromeClient(new WebplayerChromeClient());
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
         //button declaration
         Button bluetoothButton = (Button) this.findViewById(R.id.bluetoothBtn);
         Button upButton = (Button) this.findViewById(R.id.up);
