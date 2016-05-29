@@ -29,14 +29,7 @@
         android:id="@+id/titleView" />
 
     <RelativeLayout android:layout_width="fill_parent"
-        android:layout_height="match_parent">
-        <WebView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="@android:color/transparent"
-            android:id="@+id/webView"
-            android:layout_alignParentEnd="true" />
-    </RelativeLayout>
+        android:layout_height="match_parent"></RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
