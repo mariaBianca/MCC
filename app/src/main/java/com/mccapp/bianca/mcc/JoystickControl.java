@@ -45,8 +45,7 @@ public class JoystickControl extends AppCompatActivity {
 
         // Webview for the live feedback
         WebView webView = (WebView) findViewById(R.id.webView);
-        webView.loadUrl("http://192.168.43.171/");
-        //raspberry-pi  http://192.168.43.171/
+        webView.loadUrl("http://192.168.43.171/");          //raspberry-pi  http://192.168.43.171/
         webView.setWebViewClient(new WebplayerClient());
         webView.setWebChromeClient(new WebplayerChromeClient());
         WebSettings webSettings = webView.getSettings();
@@ -67,10 +66,9 @@ public class JoystickControl extends AppCompatActivity {
 
                 if (BluetoothConnection.mmSocket != null) {
                     try {
-                        //int move = Integer.parseInt();
 
 
-                        BluetoothConnection.mmOutputStream.write(("" + power + "." + angle + "#").getBytes());
+                        BluetoothConnection.mmOutputStream.write(("P" +power + "A" + angle + "D").getBytes());
                         // FirstFragment.mmOutputStream.write(("t"+angle).getBytes());
 
                     } catch (IOException e) {
