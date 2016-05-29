@@ -45,6 +45,13 @@ public class HomeScreen extends AppCompatActivity {
 
         //button declaration for  episode display activity
         Button buttonEpisode = (Button) this.findViewById(R.id.btnEpisode);
+        buttonEpisode.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(HomeScreen.this, Episode.class);
+                startActivity(intent);
+            }
+        });
 
         //button declaration for the bluetooth connection
         Button buttonBluetooth = (Button) this.findViewById(R.id.btnBluetooth);
