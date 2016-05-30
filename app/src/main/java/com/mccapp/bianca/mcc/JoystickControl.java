@@ -67,9 +67,25 @@ public class JoystickControl extends AppCompatActivity {
                 if (BluetoothConnection.mmSocket != null) {
                     try {
 
+                        if (direction == 5 || direction == 6) {
+                            BluetoothConnection.mmOutputStream.write("w".getBytes());
+                        }
+                        else if (direction == 7 || direction == 8) {
+                            BluetoothConnection.mmOutputStream.write("t".getBytes());
+                        }
+                        else if (direction == 1 || direction == 2){
+                            BluetoothConnection.mmOutputStream.write("r".getBytes());
+                        }
+                        else if (direction == 3 || direction == 3){
+                            BluetoothConnection.mmOutputStream.write("l".getBytes());
+                        }
+                        else if (angle == 0){
+                            BluetoothConnection.mmOutputStream.write("f".getBytes());
+                        }
+                        else if (angle == 180){
+                            BluetoothConnection.mmOutputStream.write("b".getBytes());
+                        }
 
-                        BluetoothConnection.mmOutputStream.write(("P" +power + "A" + angle + "D").getBytes());
-                        // FirstFragment.mmOutputStream.write(("t"+angle).getBytes());
 
                     } catch (IOException e) {
                         e.printStackTrace();
