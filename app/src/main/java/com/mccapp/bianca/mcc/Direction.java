@@ -3,15 +3,15 @@ package com.mccapp.bianca.mcc;
 import java.io.IOException;
 
 /**
-*  @author Group Ella
+ * @author Group Ella
  */
+
 /**
  * This class represents the implementation of the Directions used in ButtonView.
  * */
 public class Direction {
 
-    static void Forward()
-    {
+    static void Forward() {
         try {
             BluetoothConnection.mmOutputStream.write("f".getBytes());
         } catch (IOException e) {
@@ -19,37 +19,50 @@ public class Direction {
         }
     }
 
-    static void Backward()
-    {
+    static void Backward() {
         try {
             BluetoothConnection.mmOutputStream.write("b".getBytes());
-        }  catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    static void Right(){
-        try{
+    static void Right() {
+        try {
             BluetoothConnection.mmOutputStream.write("r".getBytes());
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-    static void Left(){
-        try{
-            BluetoothConnection.mmOutputStream.write("l".getBytes());
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    static void Stop(){
-        try{
-            BluetoothConnection.mmOutputStream.write("s".getBytes());
+    static void Left() {
+        try {
+            BluetoothConnection.mmOutputStream.write("l".getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        catch (IOException e){
+    }
+
+    static void Stop() {
+        try {
+            BluetoothConnection.mmOutputStream.write("s".getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void backRight() {
+        try {
+            BluetoothConnection.mmOutputStream.write("t".getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void backLeft() {
+        try {
+            BluetoothConnection.mmOutputStream.write("w".getBytes());
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

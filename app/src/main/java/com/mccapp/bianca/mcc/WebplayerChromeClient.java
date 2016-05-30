@@ -9,19 +9,16 @@ import android.webkit.WebChromeClient;
  */
 public class WebplayerChromeClient extends WebChromeClient {
 
-
+    // Initiate the required for WebChromeClient
     private CustomViewCallback webViewCallback;
     private WebChromeClient mWebChromeClient;
     private WebChromeClient.CustomViewCallback mCustomViewCallback;
     View view;
 
-
+    // The CustomView for WebChromeClient
     public void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback) {
         onShowCustomView(view, callback);
 
-    }
-
-    public void onHideCustomView() {
     }
 
 }
