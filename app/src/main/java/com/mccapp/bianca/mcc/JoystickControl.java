@@ -64,26 +64,34 @@ public class JoystickControl extends AppCompatActivity {
                 powerTextView.setText(" " + valueOf(power) + "%");
                 directionTextView.setText("" + valueOf(direction));
 
+
                 if (BluetoothConnection.mmSocket != null) {
                     try {
 
-                        if (direction == 5 || direction == 6) {
-                            BluetoothConnection.mmOutputStream.write("w".getBytes());
-                        }
-                        else if (direction == 7 || direction == 8) {
-                            BluetoothConnection.mmOutputStream.write("t".getBytes());
-                        }
-                        else if (direction == 1 || direction == 2){
-                            BluetoothConnection.mmOutputStream.write("r".getBytes());
-                        }
-                        else if (direction == 3 || direction == 3){
-                            BluetoothConnection.mmOutputStream.write("l".getBytes());
-                        }
-                        else if (angle == 0){
+                        if (angle > -10 && angle < 10 && power != 0){
                             BluetoothConnection.mmOutputStream.write("f".getBytes());
                         }
-                        else if (angle == 180){
+                        else if (angle >= 10 && angle < 90){
+                            BluetoothConnection.mmOutputStream.write("i".getBytes());
+                        }
+                        else if (angle >=  90 && angle <= 170){
+                            BluetoothConnection.mmOutputStream.write("t".getBytes());
+                        }
+                        else if (angle > 170 && angle <= 180 ){
                             BluetoothConnection.mmOutputStream.write("b".getBytes());
+                        }
+                        else if (angle >= -180 && angle < -170){
+                            BluetoothConnection.mmOutputStream.write("b".getBytes());
+                        }
+                        else if (angle >= -170 && angle < -90)
+                        {
+                            BluetoothConnection.mmOutputStream.write("w".getBytes());
+                        }
+                        else if (angle >= -90 && angle < -10){
+                            BluetoothConnection.mmOutputStream.write("h".getBytes());
+                        }
+                        else{
+                            BluetoothConnection.mmOutputStream.write("s".getBytes());
                         }
 
 

@@ -9,6 +9,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 /**
  * This class represents the implementation of the HomeScreen view.
@@ -58,5 +62,8 @@ public class HomeScreen extends AppCompatActivity {
         Listeners.BluetoothListener(buttonBluetooth);
 
 
+
     }
+
+
 }

@@ -8,9 +8,12 @@ import java.io.IOException;
 
 /**
  * This class represents the implementation of the Directions used in ButtonView.
+ *
  * */
 public class Direction {
 
+
+    // Implement the Controls for the Direction
     static void Forward() {
         try {
             BluetoothConnection.mmOutputStream.write("f".getBytes());

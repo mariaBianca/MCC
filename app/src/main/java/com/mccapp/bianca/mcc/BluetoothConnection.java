@@ -7,12 +7,15 @@ package com.mccapp.bianca.mcc;
  */
 
 
+import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Handler;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,7 +23,7 @@ import java.io.OutputStream;
 import java.util.Set;
 import java.util.UUID;
 
-public class BluetoothConnection {
+public class BluetoothConnection extends HomeScreen {
 
     static BluetoothAdapter mBluetoothAdapter;
     static BluetoothSocket mmSocket;
@@ -31,13 +34,12 @@ public class BluetoothConnection {
     static byte[] readBuffer;
     static int readBufferPosition;
     volatile static boolean stopWorker;
-    static TextView bluetoothLabel;
+    static boolean bluetoothCheck = false;
 
-
+//
     public static void findBT() {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBluetoothAdapter == null) {
-            //bluetoothLabel.setText("No bluetooth adapter available");
         }
 
         if (!mBluetoothAdapter.isEnabled()) {
@@ -49,12 +51,13 @@ public class BluetoothConnection {
         if (pairedDevices.size() > 0) {
             for (BluetoothDevice device : pairedDevices) {
                 if (device.getName().equals("HC-06")) {
+                    //bluetoothLabel.setText("Bluetooth Device Found");
                     mmDevice = device;
                     break;
                 }
             }
         }
-        // bluetoothLabel.setText("Bluetooth Device Found");
+
     }
 
     public static void openBT() throws IOException {
@@ -65,6 +68,7 @@ public class BluetoothConnection {
         mmInputStream = mmSocket.getInputStream();
 
         beginListenForData();
+        bluetoothCheck = true;
         //bluetoothLabel.setText("Bluetooth opened");
     }
 
@@ -93,7 +97,7 @@ public class BluetoothConnection {
 
                                     handler.post(new Runnable() {
                                         public void run() {
-                                            bluetoothLabel.setText(data);
+                                            //bluetoothLabel.setText(data);
                                         }
                                     });
                                 } else {

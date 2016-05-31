@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ButtonView extends Activity {
 
@@ -32,7 +33,6 @@ public class ButtonView extends Activity {
         Button rightButton = (Button) this.findViewById(R.id.right);
         Button stopButton = (Button) this.findViewById(R.id.stop);
 
-
         //assign keyListeners to the buttons.
         Listeners.BluetoothListener(bluetoothButton);
         Listeners.UpListener(upButton);
@@ -41,6 +41,8 @@ public class ButtonView extends Activity {
         Listeners.RightListener(rightButton);
         Listeners.StopListener(stopButton);
     }
+
+
 
 
 }
