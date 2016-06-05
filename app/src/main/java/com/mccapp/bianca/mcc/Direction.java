@@ -11,7 +11,7 @@ public class Direction {
 
 
     /**
-     * This method implements the movement forward..
+     * This method implements the movement forward.
      */
     static void Forward() {
         try {
