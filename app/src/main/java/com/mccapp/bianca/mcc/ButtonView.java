@@ -1,8 +1,6 @@
 package com.mccapp.bianca.mcc;
 /**
  * @author Group Ella.
- */
-/**
  * This class represents the implementation of the Button-controlled view.
  * */
 
@@ -18,14 +16,16 @@ public class ButtonView extends Activity {
 
     BluetoothConnection bc;
 
-      // Beginning of the activity
+  /**
+   * This method implements the beginning of the activity
+   */
       protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_button_view);
 
 
-        //button declaration
+        //Declaration of buttons
         Button bluetoothButton = (Button) this.findViewById(R.id.bluetoothBtn);
         Button upButton = (Button) this.findViewById(R.id.up);
         Button downButton = (Button) this.findViewById(R.id.down);

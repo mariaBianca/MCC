@@ -6,17 +6,19 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 /**
- * Created by Team Ella on 2016-05-27.
- * This class allows the user to watch an episode of Magic School Bus.
+ * @author group Ella.
+ * This class represents the implementation of allowing the user to watch an episode of Magic School Bus.
  */
 public class Episode extends AppCompatActivity {
 
-    //Beginning of the activity
+    /**
+     * This method implements the beginning of the activity.
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.episode_view);
 
-        // Create webview and load the url
+        //Creation of webview and loadurl
         WebView webView = (WebView) findViewById(R.id.webView);
         webView.loadUrl("https://youtu.be/_2kx8vJBR_s");
 

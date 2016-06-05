@@ -2,8 +2,7 @@ package com.mccapp.bianca.mcc;
 
 /**
  * @author group Ella.
- * <p/>
- * This class represents the implementation of the Bluetooth Connection view.
+ * This class represents the implementation of the Bluetooth Connection.
  */
 
 
@@ -37,6 +36,10 @@ public class BluetoothConnection extends HomeScreen {
     static boolean bluetoothCheck = false;
 
 //
+
+    /**
+     * This method implements the finding the bluetooth device.
+     */
     public static void findBT() {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBluetoothAdapter == null) {
@@ -59,7 +62,9 @@ public class BluetoothConnection extends HomeScreen {
         }
 
     }
-
+    /**
+     * This method implements the opening the bluetooth connection.
+     */
     public static void openBT() throws IOException {
         UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb"); //Standard SerialPortService ID
         mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
@@ -72,6 +77,9 @@ public class BluetoothConnection extends HomeScreen {
         //bluetoothLabel.setText("Bluetooth opened");
     }
 
+    /**
+     * This method implements the listening of data for the bluetooth
+     */
     public static void beginListenForData() {
         final Handler handler = new Handler();
         final byte delimiter = 10; //This is the ASCII code for a newline character
@@ -115,7 +123,9 @@ public class BluetoothConnection extends HomeScreen {
         workerThread.start();
     }
 
-
+    /**
+     * This method implements the closing of the bluetooth
+     */
     public void closeBT() throws IOException {
         stopWorker = true;
         mmOutputStream.close();

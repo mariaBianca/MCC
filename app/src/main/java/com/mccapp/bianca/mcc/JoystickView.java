@@ -2,18 +2,8 @@ package com.mccapp.bianca.mcc;
 
 /**
  * @author Group Ella.
- * <p/>
  * This class represents the implementation of the Joystick controller view.
- * <p/>
- * This class has been refactored from a resource on StackOverflow.
  */
-/**
- * This class represents the implementation of the Joystick controller view.
- * */
-
-/**
- * This class has been refactored from a resource on StackOverflow.
- * */
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -67,7 +57,9 @@ public class JoystickView extends View implements Runnable {
         super(context, attrs, defaultStyle);
         initJoystickView();
     }
-
+    /**
+     * This method implements the initiation of the Joystick View.
+     */
     protected void initJoystickView() {
         mainCircle = new Paint(Paint.ANTI_ALIAS_FLAG);
         mainCircle.setColor(Color.WHITE);
@@ -91,11 +83,15 @@ public class JoystickView extends View implements Runnable {
     }
 
     @SuppressLint("MissingSuperCall")
-    @Override
+    /**
+     * This method implements conversion of XML file to a View
+     */
     protected void onFinishInflate() {
     }
 
-    @Override
+    /**
+     * This method implements the changing of size.
+     */
     protected void onSizeChanged(int xNew, int yNew, int xOld, int yOld) {
         super.onSizeChanged(xNew, yNew, xOld, yOld);
         // before measure, get the center of view
@@ -107,7 +103,9 @@ public class JoystickView extends View implements Runnable {
 
     }
 
-    @Override
+    /**
+     * This method implements the size of the custom view.
+     */
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         // setting the measured values to resize the view to a certain width and
         // height
@@ -160,7 +158,9 @@ public class JoystickView extends View implements Runnable {
         canvas.drawCircle(xPosition, yPosition, buttonRadius, button);
     }
 
-    @Override
+    /**
+     * This method implements the event that occurs on touch.
+     */
     public boolean onTouchEvent(MotionEvent event) {
         xPosition = (int) event.getX();
         yPosition = (int) event.getY();
@@ -258,6 +258,9 @@ public class JoystickView extends View implements Runnable {
         return direction;
     }
 
+    /**
+     * This method implements the creation of JoystickMoveListener.
+     */
     public void setOnJoystickMoveListener(OnJoystickMoveListener listener,
                                           long repeatInterval) {
         this.onJoystickMoveListener = listener;
@@ -268,7 +271,9 @@ public class JoystickView extends View implements Runnable {
         public void onValueChanged(int angle, int power, int direction);
     }
 
-    @Override
+    /**
+     * This method implements the running of the thread.
+     */
     public void run() {
         while (!Thread.interrupted()) {
             post(new Runnable() {

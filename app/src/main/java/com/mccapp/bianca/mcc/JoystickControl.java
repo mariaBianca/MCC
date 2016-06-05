@@ -1,5 +1,11 @@
 package com.mccapp.bianca.mcc;
 
+/**
+ * @author group Ella.
+ * This class represents the implementation of the control's of the Joystick.
+ */
+
+
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,7 +37,9 @@ public class JoystickControl extends AppCompatActivity {
 
     @Override
 
-    // Beginning of the activity
+    /**
+     * This method implements the setting of content view to Joystick.
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joystick_control);

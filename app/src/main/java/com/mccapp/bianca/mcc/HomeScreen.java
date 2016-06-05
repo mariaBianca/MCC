@@ -2,6 +2,7 @@ package com.mccapp.bianca.mcc;
 
 /**
  *  @author Group Ella.
+ *  This class represents the implementation of the HomeScreen view.
  */
 
 import android.content.Intent;
@@ -14,14 +15,14 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
-/**
- * This class represents the implementation of the HomeScreen view.
- * */
 
 public class HomeScreen extends AppCompatActivity {
 
     BluetoothConnection bc;
 
+    /**
+     * This method implements the setting of content view to HomeScreen.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

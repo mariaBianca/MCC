@@ -15,7 +15,9 @@ public class WebplayerChromeClient extends WebChromeClient {
     private WebChromeClient.CustomViewCallback mCustomViewCallback;
     View view;
 
-    // The CustomView for WebChromeClient
+    /**
+     * This method implements the notification to the application that the page is full screen.
+     */
     public void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback) {
         onShowCustomView(view, callback);
 

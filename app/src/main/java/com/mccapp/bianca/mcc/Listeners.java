@@ -2,8 +2,6 @@ package com.mccapp.bianca.mcc;
 
 /**
  * @author Group Ella.
- * */
-/**
  * This class represents the implementation of the Key Listeners for all the buttons used throughout the app.
  * */
 
@@ -16,10 +14,8 @@ import java.io.IOException;
 public class Listeners {
 
     /**
-     * Method to set the keyListener for the buttons.
-     * */
-
-
+     * This method implements the Listener for Bluetooth
+     */
     public static void BluetoothListener(Button button){
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +32,7 @@ public class Listeners {
     }
 
     /**
-     * Method to set the KeyListener for the upButton
+     * This method implements the KeyListener for the upButton
      * */
     public static void UpListener(Button button){
         button.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +44,7 @@ public class Listeners {
     }
 
     /**
-     * Method to set the KeyListener for the downButton
+     * This method implements the KeyListener for the downButton
      * */
     public static void DownListener(Button button){
         button.setOnClickListener(new View.OnClickListener(){
@@ -59,7 +55,7 @@ public class Listeners {
     }
 
     /**
-     * Method to set the KeyListener for the rightButton
+     * This method implements the KeyListener for the rightButton
      * */
     public static void RightListener(Button button){
         button.setOnClickListener(new View.OnClickListener(){
@@ -71,7 +67,7 @@ public class Listeners {
     }
 
     /**
-     * Method to set the KeyListener for the leftButton
+     * This method implements the KeyListener for the leftButton
      * */
     public static void LeftListener(Button button){
         button.setOnClickListener(new View.OnClickListener(){
@@ -83,7 +79,7 @@ public class Listeners {
     }
 
     /**
-     * Method to set the KeyListener for the stopButton
+     * This method implements the KeyListener for the stopButton
      * */
     public static void StopListener(Button button){
         button.setOnClickListener(new View.OnClickListener(){
