@@ -1,5 +1,6 @@
 /**
  * @Author Group Ella
+ * Implementation of the Light test
 */ 
 
 //declaring the right side LEDs veriables
