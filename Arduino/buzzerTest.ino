@@ -1,6 +1,6 @@
 /**
  * @Author Group Ella
-This class represents the implementation of the buzzer test thathas been done
+ * This class represents the implementation of the buzzer test that has been done.
 */ 
 
 //declaring buzzer
