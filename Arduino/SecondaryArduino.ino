@@ -1,31 +1,36 @@
-//author Group Ella
-//This Arduino has been used as a secondary board for the "The Magic School Bus" inspired project.
-//This board is used in order to display the car's plate number, on the propeller and the 
-//alternating lights.
-
-
+/**
+ * @Author Team Ella
+*/ 
+/**
+ * This class represents the secondary Arduino for "The Magic School Bus" project
+ * This board is used in order to display the car's plate number, on the propeller and the altering lights
+ */
+ 
+//importing smartcar libraries
 #include <LiquidCrystal.h>
 #include <Servo.h>
 
-//declare the components
+//declaring car components
 Servo myServo;
 LiquidCrystal lcd(12,11,5,4,3,2);
 
-//declare variables used for the LCD
+//declaring variables for the LCDs
 const int switchPin = 6;
 int pos = 0;
 
-//declare variables used by the LEDs
-//the right side LEDs
+//declaring variables for the LEDs
+
+//declaring the right side LEDs
 int ledGreenRight = 6;
 int ledYellowRight = 1;
 int ledBlueRight = 9;
-//the left side LEDs
+
+//declaring the left side LEDs
 int ledGreenLeft = 7;
 int ledYellowLeft = 10;
 int ledBlueLeft = 8;
 
-//create the smile on the LCD
+//creating a smily face on the LCD
 byte smile[8] = {
   B00000,
   B10001,
@@ -36,7 +41,7 @@ byte smile[8] = {
   B00000,
 };
 
-//create the hearts on the LCD
+//creating a heart shape on the LCD
 byte heart[8] = 
               {
                 0b00000,
@@ -48,18 +53,20 @@ byte heart[8] =
                 0b00100,
                 0b00000
               };
-
+/**
+ * This method implements the connections and starting up for the car components
+*/ 
 void setup() {
- //start the LED
+ //starting the LED
  lcd.begin(16,2);
  lcd.createChar(1, heart);
  lcd.createChar(2, smile);
  pinMode (switchPin, INPUT);
 
- //start the servo
+ //starting the servo
  myServo.attach(A5);
 
- //initialise LEDs
+ //initialising LEDs
  pinMode(ledGreenRight, OUTPUT);
  pinMode(ledYellowRight, OUTPUT);
  pinMode(ledBlueRight, OUTPUT);
@@ -69,23 +76,23 @@ void setup() {
 }
 
 void loop() { 
-  //set cursor at position 0,0 on the LCD
+  //setting first cursor position row on the LCD
   lcd.setCursor(0,0);
   lcd.print("Team ELLA");
 
-  //set cursor at position 0, second row on the LCD
+  //setting second cursor position row on the LCD
   lcd.setCursor(0, 1);
   //start writing a character with delay
   lcd.write(1);
   myServo.write(0);
-  //start the first LED set
+  //starting the first LED set
   digitalWrite(ledGreenRight, HIGH);
   digitalWrite(ledGreenLeft, HIGH);
-  //delay
+  //checking the delay
   delay(500);
   
 
-  //continue changing the LED that will light, the direction of the servo and add a new character to the LCD
+  //changing the LED light continuously, the direction of the servo and add a new character to the LCD
   myServo.write(180);
   digitalWrite(ledGreenRight, LOW);
   digitalWrite(ledGreenLeft, LOW);
