@@ -1,5 +1,6 @@
 /**
  *@Author Group Ella
+ * This class represent the implementation of turning light test
 */ 
 
 //declaring the LEDs veriables
@@ -22,9 +23,7 @@ void setup() {
 /**
  * This method implements the looping of functions of LEDs
 */ 
-
 void loop() {
-  
   digitalWrite(pinFrontRight, HIGH);
   digitalWrite(pinBackRight, HIGH);
   digitalWrite(pinBackLeft, HIGH);
