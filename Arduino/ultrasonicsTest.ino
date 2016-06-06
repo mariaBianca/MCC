@@ -1,6 +1,6 @@
 /**
  *@author Group Ella
- *This class represents the implementation of both forward and backward collision check 
+ *This class represents the implementation of both forward and backward collision check
  * by using ultrasonic sensors
 */  
 
