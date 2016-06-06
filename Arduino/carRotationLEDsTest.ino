@@ -1,6 +1,6 @@
 /**
  *@Author Group Ella
- * This class represent the implementation of turning light test
+ * This class represent the implementation of turning light test.
 */ 
 
 //declaring the LEDs veriables
