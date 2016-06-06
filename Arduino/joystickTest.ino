@@ -1,7 +1,7 @@
 /**
  *@Author Group Ella
+ * This initialize the serial
 */ 
-
 void setup() {
   Serial.begin(9600);
 }
@@ -9,7 +9,6 @@ void setup() {
 /**
  *This method implements looping of the controls of the joysticks
 */ 
-
 void loop() {
   char buffer[] ={' ',' ',' ',' ',' ', ' ',' '};
   if (Serial.available()){
