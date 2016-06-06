@@ -1,7 +1,5 @@
 /**
  *@author Group Ella
-*/
-/**
  *This class represents the implementation of both forward and backward collision check
  * by using ultrasonic sensors
 */  
@@ -48,8 +46,9 @@ gyro.begin();
 car.begin(encoderLeft, encoderRight, gyro);
 pinMode(buzzer, 0);
 }
+
 /**
- * This methods implements looping for distacne calculation for two ultrasonic sensors
+ * This method implements looping for distacne calculation for two ultrasonic sensors
 */ 
 void loop() {
   
@@ -69,6 +68,7 @@ Serial.println(' ');
 distance = 0;
 duration = 0;
 }
+
 /**
  * This method implements the distance calculation of two ultrasonic sensors
 */
