@@ -1,7 +1,10 @@
+/**
+*@author Group Ella.
+* This class represents the implementation of the main Arduino board in the system.
+* It is responsible for the collision check, movement, system stabilization, turning lights etc.
+*/
 
-//author Group Ella
-
-//Include the neccessary libraries
+//including the neccessary libraries
 #include <Smartcar.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
@@ -17,11 +20,11 @@ const int ECHO_PINb = A4;
 //declaring the pin for the buzzer
 int buzzer = A3;
 
-//Define the data wire that is plugged into the Arduino board on port A2
+//defining the data wire that is plugged into the Arduino board on port A2
 #define ONE_WIRE_BUS A2
-//Setup a oneWire instance to communicate with any OneWire device
+//setting up a oneWire instance to communicate with any OneWire device
 OneWire oneWire(ONE_WIRE_BUS);
-//Pass the oneWire reference to the temperature sensor
+//passing the oneWire reference to the temperature sensor
 DallasTemperature tempSens(&oneWire);
 
 //declaring the components
@@ -37,48 +40,54 @@ int rDegrees = 75; //degrees to turn right
 char side = 'n';
 int actualSpeed = frontSpeed;
 
-
-  //declare the LEDs
+//declaring the LEDs
 const int pinFrontLeft = A1;
 const int pinFrontRight = A9;
 const int pinBackRight= A8;
 const int pinBackLeft = A7;
 
-//integers used to calculate the distance for the 2 ultrasonic sensors
+//declaring the integers used to calculate the distance for the 2 ultrasonic sensors
 int distanceFront;
 int distanceBack;
 
+/**
+ * This method's main responsibility is to start up, attach and begin the components. 
+*/
 void setup() {
-  //begin the bluetooth 
+  
+  //beginning the bluetooth 
   Serial3.begin(9600);
-
-  Serial.begin(9600);
-  //initialize the car using the encoders and the gyro
-    //attach the components
+  //Serial.begin(9600);
+  
+  //initializing the car using the encoders and the gyro
+  //attaching the components
   gyro.attach();
   encoderLeft.attach(2);
   encoderRight.attach(3);
   ultrasonicSensorFront.attach(TRIGGER_PIN, ECHO_PIN);
   ultrasonicSensorBack.attach(TRIGGER_PINb, ECHO_PINb);
 
-  //start the components
+  //starting the components
   gyro.begin();
   car.begin(encoderLeft, encoderRight, gyro);
   tempSens.begin();
 
-  //initialise the distances used to 0
+  //initialising the distances used to 0
   distanceFront = 0;
   distanceBack = 0;
 
-  //initialise buzzer;
+  //initialising buzzer;
   pinMode(buzzer, OUTPUT);
   pinMode(pinBackLeft, OUTPUT);
   pinMode(pinBackRight, OUTPUT);
   pinMode(pinFrontLeft, OUTPUT);
   pinMode(pinFrontRight, OUTPUT);
-
 }
 
+
+/**
+*This method is in charge of looping through the movement, system stabilizer and collision check implementation.
+*/
 void loop() {
 
  distanceFront = ultrasonicSensorFront.getDistance();
@@ -106,10 +115,8 @@ void loop() {
      digitalWrite(buzzer, LOW);
    }
    }
-
-
  }
-
+ 
  speed2 = car.getSpeed();                                        //VALUE MUST GO TO ANDROID
  if ( IsClear(distanceBack) == false && side =='b'){
    if (distanceBack > 20 && distanceBack == 0){
@@ -132,20 +139,25 @@ void loop() {
   }   
    //tempSens.requestTemperatures();                                                    
  //Serial3.println(tempSens.getTempCByIndex(0));                                         //VALUE MUST GO TO ANDROID
- 
-
 }
 
-void handleInput() { //handle serial input if there is any
+/**
+*This method is in charge of handling the input in regards to the car's movement.
+*/
+void handleInput() { 
 
   if (Serial3.available()) {    
-    char input = Serial3.read(); //read everything that has been received so far and log down the last entry
-        digitalWrite(pinBackRight, LOW);
-        digitalWrite(pinBackLeft, LOW);
-        digitalWrite(pinFrontLeft, LOW);
-        digitalWrite(pinFrontRight, LOW);
+    char input = Serial3.read(); 
+    //turn off the turning lights
+    digitalWrite(pinBackRight, LOW);
+    digitalWrite(pinBackLeft, LOW);
+    digitalWrite(pinFrontLeft, LOW);
+    digitalWrite(pinFrontRight, LOW);
+    
+    //the following cases represent scenarios in which the car will move at a specific speed, and a specific direction. The lights
+    //on the car will turn in regards to that.
     switch (input) {     
-      case 'l': //rotate counter-clockwise going forward
+      case 'l':
         car.setSpeed(actualSpeed);
         car.setAngle(lDegrees);       
         side = 'l';
@@ -201,12 +213,16 @@ void handleInput() { //handle serial input if there is any
   }
 }
 
-  boolean IsClear(int distance){
-      if (distance > 20){
-       //Serial.print(distance); 
-       return true;
-      }
-      if (distance == 0){
+/**
+*This method is in charge of calculating the distance taken from the ultrasonic sensors and detecting if an eminent accident
+* could or could not occure.
+*/
+boolean IsClear(int distance){
+    if (distance > 20){
+     //Serial.print(distance); 
+     return true;
+    }
+    if (distance == 0){
         return true;
        }
      else{
