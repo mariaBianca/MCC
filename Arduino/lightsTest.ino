@@ -1,14 +1,19 @@
-//declare variables used by the LEDs
-//the right side LEDs
+/**
+ * @Author Group Ella
+*/ 
+
+//declaring the right side LEDs veriables
 int ledGreenRight = 6;
 int ledYellowRight = 1;
 int ledBlueRight = 9;
-//the left side LEDs
+//declaring the left side LEDs veriables
 int ledGreenLeft = 7;
 int ledYellowLeft = 10;
 int ledBlueLeft = 8;
 
-
+/**
+ * This menthod implements the connections and starting up for two LEDs
+*/
 
 void setup() {
  pinMode(ledGreenRight, OUTPUT);
@@ -18,7 +23,9 @@ void setup() {
  pinMode(ledYellowLeft, OUTPUT);
  pinMode(ledBlueLeft, OUTPUT);
 }
-
+/**
+ * This method implements the looping of the functions of two LEDs
+*/ 
 void loop() {
   digitalWrite(ledGreenRight, HIGH);
   digitalWrite(ledGreenLeft, HIGH);
@@ -26,6 +33,5 @@ void loop() {
   digitalWrite(ledYellowRight, HIGH);
   digitalWrite(ledBlueRight, HIGH);
   digitalWrite(ledBlueLeft, HIGH);
-  // put your main code here, to run repeatedly:
 
 }
