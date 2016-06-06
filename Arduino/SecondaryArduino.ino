@@ -1,11 +1,12 @@
 /**
  * @Author Team Ella
+ * Implementation of secondaryArduino.ino.
 */ 
 /**
  * This class represents the secondary Arduino for "The Magic School Bus" project
  * This board is used in order to display the car's plate number, on the propeller and the altering lights
  */
- 
+
 //importing smartcar libraries
 #include <LiquidCrystal.h>
 #include <Servo.h>
@@ -91,7 +92,6 @@ void loop() {
   //checking the delay
   delay(500);
   
-
   //changing the LED light continuously, the direction of the servo and add a new character to the LCD
   myServo.write(180);
   digitalWrite(ledGreenRight, LOW);
