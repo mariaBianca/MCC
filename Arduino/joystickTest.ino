@@ -1,8 +1,14 @@
+/**
+ *@Author Group Ella
+*/ 
+
 void setup() {
   Serial.begin(9600);
-  // put your setup code here, to run once:
-
 }
+
+/**
+ *This method implements looping of the controls of the joysticks
+*/ 
 
 void loop() {
   char buffer[] ={' ',' ',' ',' ',' ', ' ',' '};
