@@ -1,3 +1,8 @@
+/**
+ * @Author Group Ella
+*/ 
+
+//declaring buzzer
 const int buzzer = A3;
 
 void setup() {
@@ -5,7 +10,9 @@ void setup() {
   // put your setup code here, to run once:
 
 }
-
+/**
+ * This method implements the looping of triggering the buzzer
+*/ 
 void loop() {
 
   digitalWrite(buzzer, HIGH);
