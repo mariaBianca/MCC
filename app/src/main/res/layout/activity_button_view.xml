@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/buttonbackground"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -30,6 +31,57 @@
     <RelativeLayout android:layout_width="fill_parent"
         android:layout_height="match_parent">
 
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:id="@+id/left"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:background="@drawable/leftarrow"
+            android:layout_alignTop="@+id/stop"
+            android:layout_toStartOf="@+id/stop" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:id="@+id/right"
+            android:background="@drawable/rightarrow"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:id="@+id/up"
+            android:background="@drawable/uparrow"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_above="@+id/left"
+            android:layout_toStartOf="@+id/right" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:background="@drawable/downarrow"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:id="@+id/down"
+            android:layout_below="@+id/right"
+            android:layout_toStartOf="@+id/right" />
+
+        <Button
+            android:id="@+id/bluetoothBtn"
+            android:background="@drawable/bluetooth"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@+id/left"
+            android:layout_marginEnd="43dp" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:background="@drawable/pause"
+            android:id="@+id/stop"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/down" />
     </RelativeLayout>
 
     <TextView
@@ -38,66 +90,9 @@
         android:id="@+id/UnderTitle"
         android:layout_below="@+id/titleView"
         android:layout_centerHorizontal="true"
-        android:text="The Magic School Bus"
+        android:text=" Ella School Bus"
         android:textColor="#060606"
         android:textStyle="italic" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:id="@+id/left"
-        android:layout_width="50dp"
-        android:layout_height="60dp"
-        android:background="@drawable/leftarrow"
-        android:layout_above="@+id/down"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="18dp" />
-
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="60dp"
-        android:background="@drawable/pause"
-        android:id="@+id/stop"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:id="@+id/right"
-        android:background="@drawable/rightarrow"
-        android:layout_width="50dp"
-        android:layout_height="60dp"
-        android:layout_above="@+id/down"
-        android:layout_alignEnd="@+id/bluetoothBtn" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:background="@drawable/downarrow"
-        android:layout_width="50dp"
-        android:layout_height="60dp"
-        android:id="@+id/down"
-        android:layout_marginTop="55dp"
-        android:layout_below="@+id/stop"
-        android:layout_alignStart="@+id/stop" />
-
-    <Button
-        android:id="@+id/up"
-        android:background="@drawable/uparrow"
-        android:layout_width="50dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/UnderTitle"
-        android:layout_alignStart="@+id/stop"
-        android:layout_marginTop="37dp" />
-
-    <Button
-        android:id="@+id/bluetoothBtn"
-        android:background="@drawable/bluetooth"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:layout_alignTop="@+id/down"
-        android:layout_toEndOf="@+id/UnderTitle"
-        android:layout_marginTop="24dp" />
-
-
 
 
 </RelativeLayout>
